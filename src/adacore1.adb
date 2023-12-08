@@ -5,6 +5,7 @@ with day3_2023;
 with day4_2023;
 with day5_2023;
 with day6_2023;
+with day7_2023;
 
 procedure Adacore1 is
 
@@ -17,5 +18,6 @@ begin
    day4_2023.run;
    -- day5_2023.run;
    day6_2023.run;
+   day7_2023.run;
 
 end Adacore1;
