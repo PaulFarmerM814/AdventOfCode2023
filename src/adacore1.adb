@@ -10,6 +10,7 @@ with day9_2023;
 with day10_2023;
 with day11_2023;
 with day12_2023;
+with day13_2023;
 with day14_2023;
 with day15_2023;
 
@@ -30,7 +31,8 @@ begin
    -- day10_2023.run;
    -- day11_2023.run;
    -- day12_2023.run;
-   day14_2023.run;
-   day15_2023.run;
+   day13_2023.run;
+   -- day14_2023.run;
+   -- day15_2023.run;
 
 end Adacore1;

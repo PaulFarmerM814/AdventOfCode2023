@@ -1,22 +1,29 @@
 with "config/adacore1_config.gpr";
+
 project Adacore1 is
 
-   for Source_Dirs use ("src/", "config/");
+   for Source_Dirs use ("src/**", "config");
    for Object_Dir use "obj/" & Adacore1_Config.Build_Profile;
    for Create_Missing_Dirs use "True";
    for Exec_Dir use "bin";
    for Main use ("adacore1.adb");
 
    package Compiler is
-      for Default_Switches ("Ada") use Adacore1_Config.Ada_Compiler_Switches;
+      for Default_Switches ("ada") use ("-ffunction-sections", "-fdata-sections", "-g", "-gnatX", "-gnatVa", "-gnatwa.X", "-gnatyaABbc-defhiIklM79nOprStux");
    end Compiler;
 
    package Binder is
-      for Switches ("Ada") use ("-Es"); --  Symbolic traceback
+      for Switches ("ada") use ("-Es"); --  Symbolic traceback
    end Binder;
 
    package Install is
       for Artifacts (".") use ("share");
    end Install;
 
+   package Builder is
+      for Global_Compilation_Switches ("ada") use ("-gnatX");
+      for Executable ("adacore1.adb") use "";
+   end Builder;
+
 end Adacore1;
+
